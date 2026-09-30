@@ -1,4 +1,5 @@
 import React from "react";
+import App from "./App.jsx";
 import LoginForm from "./components/LoginForm";
 import Dashboard from "./components/Dashboard";
 
