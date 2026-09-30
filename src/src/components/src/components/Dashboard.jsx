@@ -5,19 +5,18 @@ function Dashboard() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      const data = await getProducts();
-      setProducts(data);
-    }
-    fetchData();
+    // Fetch data dari backend bila component load
+    getProducts().then(setProducts);
   }, []);
 
   return (
-    <div>
+    <div style={{ padding: "20px" }}>
       <h2>Warehouse Dashboard</h2>
       <ul>
         {products.map((p) => (
-          <li key={p.id}>{p.name} - {p.stock} units</li>
+          <li key={p.id}>
+            {p.name} - {p.stock} units
+          </li>
         ))}
       </ul>
     </div>
